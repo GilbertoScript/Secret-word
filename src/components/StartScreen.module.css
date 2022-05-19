@@ -1,0 +1,26 @@
+.start h1 {
+	font-size: 3rem;
+	margin: 2rem 0;
+}
+
+.start h2 {
+	font-size: 1.25rem;
+}
+
+.start button {
+	background: transparent;
+	font-weight: 900;
+	border: 0;
+	color: #fff;
+	margin-top: 2.5rem;
+	padding: 2rem 4rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	box-shadow: 0px 10px 20px 0px #222;
+	transition: .5s;
+}
+
+.start button:hover {
+	background: #5A5BF3;
+	color: #fff;
+}

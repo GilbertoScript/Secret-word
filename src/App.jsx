@@ -1,10 +1,14 @@
+// Css
 import './App.css';
+
+// Componentes
+import StartScreen from './components/StartScreen'
 
 function App() {
     return (
         <div className="App">
             
-            <h1>Secret Word (Palavra Secreta)</h1>
+            <StartScreen />
         </div>
     );
 }
