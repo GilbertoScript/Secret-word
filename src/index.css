@@ -13,3 +13,12 @@ body {
 	background: linear-gradient(130deg, #5A5BF3 0%, #91E7D9 100%);
 	color: #FFF;
 }
+
+h1 {
+	font-size: 3rem;
+	margin: 2rem 0;
+}
+
+h2 {
+	font-size: 1.25rem;
+}
