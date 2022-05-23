@@ -68,9 +68,9 @@ function App() {
     }
 
     // Processar as letras no jogo
-    const verifyLetter = () => {
+    const verifyLetter = (letter) => {
 
-        setGameStage(stages[2].name)
+        console.log(letter)
     }
 
     // Função para reiiniciar o jogo

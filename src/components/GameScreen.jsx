@@ -1,4 +1,8 @@
+// Css
 import styles from './GameScreen.module.css'
+
+// Hooks
+import { useState, useRef } from 'react'
 
 const GameScreen = ({ 
 	verifyLetter, 
@@ -10,6 +14,20 @@ const GameScreen = ({
 	guesses,
 	score
 }) => {
+
+	// Letra enviada pelo formulário 
+	const [letter, setLetter] = useState('')
+	const letterInputRef = useRef(null)
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+
+		verifyLetter(letter)
+
+		// Limpar input e aplicar foco automaticamente
+		setLetter('')
+		letterInputRef.current.focus()
+	}
 
 	return (
 		<div className={styles.game}>
@@ -47,8 +65,15 @@ const GameScreen = ({
 			<div className={styles.letterContainer}>
 				<p>Tente adivinhar uma letra da palavra:</p>
 
-				<form>
-					<input type="text" maxLength="1" required />
+				<form onSubmit={handleSubmit}>
+					<input 
+						type="text" 
+						maxLength="1" 
+						required 
+						onChange={(e) => {setLetter(e.target.value)}}
+						value={letter} 
+						ref={letterInputRef}
+					/>
 					<button className="btn-primary">Jogar!</button>
 				</form>
 			</div>
