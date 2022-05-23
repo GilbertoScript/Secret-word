@@ -70,8 +70,30 @@ function App() {
     // Processar as letras no jogo
     const verifyLetter = (letter) => {
 
-        console.log(letter)
+        const normalizedLetter = letter.toLowerCase()
+
+        // Verificar se a letra já foi utilizada
+        if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
+            return
+        }
+
+        // Atualizando letras corretas e erradas, utilizando desestruturação
+        if(letters.includes(normalizedLetter)) {
+
+            setGuessedLetters((actualGuessedLetters) => [
+                ...actualGuessedLetters, 
+                normalizedLetter
+            ])
+        } else {
+
+            setWrongLetters((actualWrongLetters) => [
+                ...actualWrongLetters, 
+                normalizedLetter
+            ])
+        }
     }
+
+    console.log(guessedLetters, wrongLetters)
 
     // Função para reiiniciar o jogo
     const retryGame = () => {
