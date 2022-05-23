@@ -1,21 +1,47 @@
 import styles from './GameScreen.module.css'
 
-const GameScreen = ({ verifyLetter }) => {
+const GameScreen = ({ 
+	verifyLetter, 
+	pickedWord, 
+	pickedCategory, 
+	letters, 
+	guessedLetters, 
+	wrongLetters,
+	guesses,
+	score
+}) => {
 
 	return (
 		<div className={styles.game}>
 			<p className={styles.points}>
-				<span>Pontuação: 000</span>
+				<span>Pontuação: {score}</span>
 			</p>
+
 			<h1>Adivinhe a palavra</h1>
 			<h2 className={styles.tip}>
 				Dica sobre a palavra: 
-				<span> Dica </span>
+				<span> {pickedCategory} </span>
 			</h2>
 
+			<p>Você ainda tem <strong>{guesses}</strong> tentativa(s).</p>
+
 			<div className={styles.wordContainer}>
-				<span className={styles.letter}>A</span>
-				<span className={styles.blankSquare}></span>
+
+				{/* Mapeamento das letras, se a letra já foi adivinha, exibir ela, 
+				se não, exibir espaço vazio */}
+				{letters.map((letter, i) => (
+
+					guessedLetters.includes(letter) ? (
+
+						<span key={i} className={styles.letter}>
+							{letter}
+						</span>
+					) : (
+
+						<span key={i} className={styles.blankSquare}></span>
+					)	
+				))}
+
 			</div>
 
 			<div className={styles.letterContainer}>
@@ -29,8 +55,10 @@ const GameScreen = ({ verifyLetter }) => {
 
 			<div className={styles.wrongLettersContainer}>
 				<p>Letras já utilizadas: </p>
-				<span>a, </span>
-				<span>b, </span>
+				{wrongLetters.map((letter, i) => (
+
+					<span key={i}>{letter}, </span>
+				))}
 			</div>
 		</div>
 	)

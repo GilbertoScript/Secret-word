@@ -13,6 +13,7 @@ const StartScreen = ({ startGame }) => {
 					height="22" 
 				/> Play
 			</button>
+			{/*<img src="/urban-cloud.png" />*/}
 		</div>
 	)
 }

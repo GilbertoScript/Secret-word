@@ -20,12 +20,20 @@ const stages = [
 
 function App() {
 
+    // Estágio do game e palavras
     const [gameStage, setGameStage] = useState(stages[0].name)
     const [words] = useState(wordsList)
 
+    // Palavra, categoria e letras escolhidas
     const [pickedWord, setPickedWord] = useState('')
     const [pickedCategory, setPickedCategory] = useState('')
     const [letters, setLetters] = useState([])
+
+    // Letras adivinhadas corretas e erradas, chances e pontuação
+    const [guessedLetters, setGuessedLetters] = useState([])
+    const [wrongLetters, setWrongLetters] = useState([])
+    const [guesses, setGuesses] = useState(10)
+    const [score, setScore] = useState(0)
 
     const pickWordAndCategory = () => {
 
@@ -75,7 +83,18 @@ function App() {
         <div className="App">
             
             {gameStage === 'start' && <StartScreen startGame={startGame} />}
-            {gameStage === 'game' && <GameScreen verifyLetter={verifyLetter} />}
+            {gameStage === 'game' && (
+                <GameScreen 
+                    verifyLetter={verifyLetter} 
+                    pickedWord={pickedWord}
+                    pickedCategory={pickedCategory}
+                    letters={letters}
+                    guessedLetters={guessedLetters}
+                    wrongLetters={wrongLetters}
+                    guesses={guesses}
+                    score={score}
+                />
+            )}
             {gameStage === 'end' && <EndScreen retryGame={retryGame} />}
         </div>
     );
