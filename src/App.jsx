@@ -18,6 +18,8 @@ const stages = [
     {id: 3, name: 'end'}
 ]
 
+const guessesQty = 10
+
 function App() {
 
     // Estágio do game e palavras
@@ -32,7 +34,7 @@ function App() {
     // Letras adivinhadas corretas e erradas, chances e pontuação
     const [guessedLetters, setGuessedLetters] = useState([])
     const [wrongLetters, setWrongLetters] = useState([])
-    const [guesses, setGuesses] = useState(10)
+    const [guesses, setGuesses] = useState(guessesQty)
     const [score, setScore] = useState(0)
 
     const pickWordAndCategory = () => {
@@ -90,13 +92,38 @@ function App() {
                 ...actualWrongLetters, 
                 normalizedLetter
             ])
+
+            setGuesses((actualGuesses) => actualGuesses - 1)
         }
     }
 
-    console.log(guessedLetters, wrongLetters)
+    const clearLetterStates = () => {
+
+        setGuessedLetters([])
+        setWrongLetters([])
+    }
+
+    /* Utilizamos o useEffect quando queremos disparar determinado evento quando uma variável em questão 
+       tiver seu estado alterado */
+    useEffect(() => {
+
+        // Quando as tentativas forem 0 ocorre o gameover
+        if(guesses <= 0) {    
+
+            // Resetar os estados - letras certas e erradas
+            clearLetterStates()
+            
+            setGameStage(stages[2].name)
+        }
+
+    }, [guesses])
 
     // Função para reiiniciar o jogo
     const retryGame = () => {
+
+        // Resetar os estados - pontuação e tentativas
+        setScore(0)
+        setGuesses(guessesQty)
 
         setGameStage(stages[0].name)
     }
