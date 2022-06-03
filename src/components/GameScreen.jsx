@@ -1,8 +1,11 @@
 // Css
 import styles from './GameScreen.module.css'
 
+// Components
+import CloudImage from './CloudImage'
+
 // Hooks
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const GameScreen = ({ 
 	verifyLetter, 
@@ -18,6 +21,7 @@ const GameScreen = ({
 	// Letra enviada pelo formulário 
 	const [letter, setLetter] = useState('')
 	const letterInputRef = useRef(null)
+	const spanScoreRef = useRef()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -29,10 +33,31 @@ const GameScreen = ({
 		letterInputRef.current.focus()
 	}
 
+	useEffect(() => {
+
+		if(score >= 100) {
+
+			setTimeout(() => {
+				spanScoreRef.current.style.backgroundColor = ''
+				spanScoreRef.current.style.color = ''
+
+			}, 2000)
+
+			spanScoreRef.current.style.backgroundColor = '#FFF'
+			spanScoreRef.current.style.color = '#91E7D9'
+		}
+		
+	}, [score])
+
 	return (
 		<div className={styles.game}>
 			<p className={styles.points}>
-				<span>Pontuação: {score}</span>
+				<span 
+					className={styles.spanScore} 
+					ref={spanScoreRef}
+				>
+					Pontuação: {score}
+				</span>
 			</p>
 
 			<h1>Adivinhe a palavra</h1>
@@ -79,12 +104,14 @@ const GameScreen = ({
 			</div>
 
 			<div className={styles.wrongLettersContainer}>
-				<p>Letras já utilizadas: </p>
+				<span>Letras já utilizadas: </span>
 				{wrongLetters.map((letter, i) => (
 
-					<span key={i}>{letter}, </span>
+					<span key={i}><strong>{letter}, </strong></span>
 				))}
 			</div>
+
+			<CloudImage />
 		</div>
 	)
 }

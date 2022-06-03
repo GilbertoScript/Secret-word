@@ -1,6 +1,14 @@
+.game {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	text-align: left;
+}
+
 .game .points {
 	font-weight: bold;
-	margin-top: 1rem;
 }
 
 .game .tip {
@@ -59,4 +67,9 @@
 
 .game .wrongLettersContainer {
 	margin-top: 1.5rem;
+}
+
+.spanScore {
+	transition: .5s;
+	padding: 4px 16px;
 }

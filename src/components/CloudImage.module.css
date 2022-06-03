@@ -1,0 +1,45 @@
+.slideInDown {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@keyframes slideInDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+.cloud {
+	width: 15rem;
+	position: absolute;
+	top: 10%;
+	right: 6%;
+}
+
+.cloud2 {
+	width: 15rem;
+	position: absolute;
+	top: 20%;
+	left: 6%;
+}
+
+@media (max-width: 968px) {
+
+	.cloud {
+		display: none;
+	}
+
+	.cloud2 {
+		display: none;
+	}
+}

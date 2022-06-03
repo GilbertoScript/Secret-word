@@ -1,0 +1,22 @@
+.endContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	text-align: left;
+}
+
+.endContainer .cloud {
+	width: 15rem;
+	position: absolute;
+	top: 10%;
+	right: 6%;
+}
+
+.endContainer .cloud2 {
+	width: 15rem;
+	position: absolute;
+	top: 20%;
+	left: 6%;
+}

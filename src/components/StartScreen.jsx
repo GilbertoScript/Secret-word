@@ -1,4 +1,8 @@
+// Css
 import styles from './StartScreen.module.css'
+
+// Components
+import CloudImage from './CloudImage'
 
 const StartScreen = ({ startGame }) => {
 
@@ -15,16 +19,7 @@ const StartScreen = ({ startGame }) => {
 					height="22" 
 				/> Play
 			</button>
-			<img 
-				className={styles.cloud} 
-				src="/urban-cloud.png" 
-				alt="Imagem de uma nuvem para o cenário" 
-			/>
-			<img 
-				className={styles.cloud2} 
-				src="/urban-cloud.png" 
-				alt="Imagem de uma nuvem para o cenário" 
-			/>
+			<CloudImage />
 		</div>
 	)
 }

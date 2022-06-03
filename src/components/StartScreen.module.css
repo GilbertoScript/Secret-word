@@ -22,20 +22,6 @@
 	font-weight: 500;
 }
 
-.startContainer .cloud {
-	width: 15rem;
-	position: absolute;
-	top: 10%;
-	right: 6%;
-}
-
-.startContainer .cloud2 {
-	width: 15rem;
-	position: absolute;
-	top: 25%;
-	left: 6%;
-}
-
 .playBtn {
 	display: flex;
 	justify-content: center;
