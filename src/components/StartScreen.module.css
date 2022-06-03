@@ -3,6 +3,37 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	height: 100vh;
+	text-align: left;
+}
+
+.startContainer h1,
+.startContainer h2 {
+	margin: 0;
+	line-height: 0.9;
+}
+
+.startContainer h1 {
+	font-size: 7rem;
+}
+
+.startContainer h2 {
+	font-size: 3.5rem;
+	font-weight: 500;
+}
+
+.startContainer .cloud {
+	width: 15rem;
+	position: absolute;
+	top: 10%;
+	right: 6%;
+}
+
+.startContainer .cloud2 {
+	width: 15rem;
+	position: absolute;
+	top: 25%;
+	left: 6%;
 }
 
 .playBtn {
@@ -10,4 +41,5 @@
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
+	margin-top: 1.5rem !important;
 }

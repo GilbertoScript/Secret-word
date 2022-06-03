@@ -4,8 +4,10 @@ const StartScreen = ({ startGame }) => {
 
 	return (
 		<div className={styles.startContainer}>
-			<h1>Secret Word</h1>
-			<h2>Clique no botão abaixo para começar a jogar</h2>
+			<div>
+				<h2>Secret</h2> 
+				<h1>Word</h1>
+			</div>
 			<button onClick={startGame} className={`${styles.playBtn} btn-primary`}>
 				<img 
 					src="/play.svg" 
@@ -13,7 +15,16 @@ const StartScreen = ({ startGame }) => {
 					height="22" 
 				/> Play
 			</button>
-			{/*<img src="/urban-cloud.png" />*/}
+			<img 
+				className={styles.cloud} 
+				src="/urban-cloud.png" 
+				alt="Imagem de uma nuvem para o cenário" 
+			/>
+			<img 
+				className={styles.cloud2} 
+				src="/urban-cloud.png" 
+				alt="Imagem de uma nuvem para o cenário" 
+			/>
 		</div>
 	)
 }

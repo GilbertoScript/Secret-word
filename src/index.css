@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', 'Roboto', sans-serif;
 	background: linear-gradient(130deg, #5A5BF3 0%, #91E7D9 100%);
 	color: #FFF;
 }

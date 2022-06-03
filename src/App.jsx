@@ -37,7 +37,7 @@ function App() {
     const [guesses, setGuesses] = useState(guessesQty)
     const [score, setScore] = useState(0)
 
-    const pickWordAndCategory = () => {
+    const pickWordAndCategory = useCallback(() => {
 
         // Pick a random category
         const categories = Object.keys(words)
@@ -47,10 +47,13 @@ function App() {
         const word = words[category][Math.floor(Math.random() * words[category].length)]
 
         return {word, category}
-    }
+    }, [words])
     
     // Função para iniciar o jogo
-    const startGame = () => {
+    const startGame = useCallback(() => {
+
+        // Limpando letras
+        clearLetterStates()
 
         // Escolher a palavra e categoria
         const {word, category} = pickWordAndCategory()
@@ -64,10 +67,8 @@ function App() {
         setPickedCategory(category)
         setLetters(wordLetters)
 
-        console.log(pickedWord, pickedCategory, letters)
-
         setGameStage(stages[1].name)
-    }
+    }, [pickWordAndCategory])
 
     // Processar as letras no jogo
     const verifyLetter = (letter) => {
@@ -112,11 +113,28 @@ function App() {
 
             // Resetar os estados - letras certas e erradas
             clearLetterStates()
-            
+
             setGameStage(stages[2].name)
         }
 
     }, [guesses])
+
+    // Checar a condição de vitória
+    useEffect(() => {
+
+        const uniqueLetters = [...new Set(letters)]
+
+        // Condição de vitória
+        if(guessedLetters.length === uniqueLetters.length && gameStage === 'game') {
+
+            // Adicionando o score
+            setScore((actualScore) => (actualScore += 100))
+
+            // Começando novo jogo com nova palavra e com o score atualizado
+            startGame()
+        }
+
+    }, [guessedLetters, letters, startGame, gameStage])
 
     // Função para reiiniciar o jogo
     const retryGame = () => {
@@ -144,7 +162,12 @@ function App() {
                     score={score}
                 />
             )}
-            {gameStage === 'end' && <EndScreen retryGame={retryGame} />}
+            {gameStage === 'end' && (
+                <EndScreen 
+                    retryGame={retryGame} 
+                    score={score}
+                />
+            )}
         </div>
     );
 }
