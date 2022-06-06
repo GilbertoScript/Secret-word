@@ -3,10 +3,9 @@
 <p align="center">
   <a href="https://github.com/GilbertoASJ/Secret-word">
     <img 
-      src="./src/assets/urban-cloud.svg" 
+      src="./src/assets/urban-cloud.png" 
       alt="Logo Secret-word"
-      width="100"
-      height="100" 
+      height="700" 
     >
   </a>
 
