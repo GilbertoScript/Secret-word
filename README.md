@@ -5,7 +5,7 @@
     <img 
       src="./src/assets/urban-cloud.png" 
       alt="Logo Secret-word"
-      height="700" 
+      height="70" 
     >
   </a>
 
