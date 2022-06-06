@@ -98,6 +98,7 @@ const GameScreen = ({
 						onChange={(e) => {setLetter(e.target.value)}}
 						value={letter} 
 						ref={letterInputRef}
+						pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
 					/>
 					<button className="btn-primary">Jogar!</button>
 				</form>

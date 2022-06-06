@@ -75,7 +75,7 @@ function App() {
 
         const normalizedLetter = letter.toLowerCase()
 
-        // Verificar se a letra já foi utilizada
+        // Se a letra já foi utilizada, ignorar
         if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
             return
         }
@@ -104,8 +104,6 @@ function App() {
         setWrongLetters([])
     }
 
-    /* Utilizamos o useEffect quando queremos disparar determinado evento quando uma variável em questão 
-       tiver seu estado alterado */
     useEffect(() => {
 
         // Quando as tentativas forem 0 ocorre o gameover
