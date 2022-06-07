@@ -55,7 +55,9 @@
 <img src="https://user-images.githubusercontent.com/56325350/172247076-138a17aa-54f8-4723-b4eb-fd438e6fb028.png" alt="Secret Word - Home">
 <hr>
 
-🚧 ...Em construção... 🚧
+Secret Word ou Palavra secreta é uma aplicação web desenvolvida com React, que tem o intuito de trazer o tema de jogos de adivinhar palavras para a web. Essa aplicação foi desenvolveida em conjuto com o curso do Matheus Batisti - React do 0 a maestria.
+
+A milha extra: Resolvi por conta própria fazer algumas modificações como o design da aplicação, alterei completamente e adicionei algumas animações, entre outros pequenos detalhes.
 
 ### Construido com
 
@@ -67,18 +69,30 @@ As tecnologias usadas nesse projeto foram:
 <!-- GETTING STARTED -->
 ## Como usar
 
-🚧 ...Em construção... 🚧
+Acesse o projeto on-line: <a href="https://secret-word-gilbertoasj.vercel.app/">Secret Word</a>, após acessar, você pode dar play no game e começar a adivinhar as palavras de acordo com a dica(categoria).
 
 Este é um exemplo de como você pode dar instruções sobre como configurar seu projeto localmente. Para obter uma cópia local instalada e funcionando, siga estas etapas simples de exemplo.
 
 ### Pré-requisitos
 
-``` 🚧 ...Em construção... 🚧 ```
+``` git e npm ```
 
 ### Instalação
 
 ```
-🚧 ...Em construção... 🚧
+# Clone este repositório
+$ git clone https://github.com/GilbertoASJ/Secret-word.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd Secret-word
+
+# Instalar as dependências
+$ npm install
+
+# Iniciar o projeto
+$ npm start
+
+# Abra localhost:3000 no navegador e veja o projeto rodar
 ```
 
 <!-- CONTRIBUTING -->
