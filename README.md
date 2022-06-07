@@ -61,10 +61,8 @@
 
 As tecnologias usadas nesse projeto foram:
 * [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5)
-* [React](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/)
-* [SASS](https://sass-lang.com/)
-* [Typescript](https://www.typescriptlang.org/)
-* [Firebase](https://firebase.google.com/)
+* [React](https://pt-br.reactjs.org/)
+* [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
 <!-- GETTING STARTED -->
 ## Como usar
